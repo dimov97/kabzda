@@ -1,35 +1,32 @@
 import React from 'react';
 import './App.css';
 import Accordion from "./Components/Accordion/Accordion";
+import {Rating} from "./Components/Rating/Rating";
 
 function App() {
   return (
     <div className="App">
-      <AppTitle />
-        <Rating />
-        <Accordion />
+      <PageTitle title={"this is APP component"}/>
+      <PageTitle title={"my friends"}/>
+        <Rating value={3}/>
+        <Accordion titleValue={"menu"} />
+        <Accordion titleValue={"users"} />
+        <Rating value={0}/>
+        <Rating value={1}/>
+        <Rating value={2}/>
+        <Rating value={3}/>
+        <Rating value={4}/>
+        <Rating value={5}/>
     </div>
   );
 }
 
-function AppTitle() {
-    return <>this is react APP</>
+type PageTitlePropsType = {
+    title: string
 }
 
-function Rating() {
-    return (
-        <div>
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-            <Star />
-        </div>
-    )
-}
-
-function Star() {
-    return <div>star</div>
+function PageTitle(props: PageTitlePropsType) {
+    return <h1>{props.title}</h1>
 }
 
 
