@@ -4,7 +4,6 @@ import Accordion from "./Components/Accordion/Accordion";
 import Rating, {ratingValueType} from "./Components/Rating/Rating";
 import OnOff from "./Components/OnOff/OnOff";
 import UncontrolledAccordion from "./Components/UncontrolledAccordion/UncontrolledAccordion";
-import UncontrolledRating from "./Components/UncontrolledRating/UncontrolledRating";
 import OnOffUncontrolled from "./Components/OnOffUncontrolled/OnOffUncontrolled";
 
 function App() {
@@ -18,17 +17,9 @@ function App() {
         <Rating value={ratingValue}
                 onClick={setRatingValue}
         />
-        <Accordion title={'Menu'}
-                   collapsed={accordionCollapsed}
-                   onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}
-        />
-        <Accordion title={'Users'}
-                   collapsed={accordionCollapsed}
-                   onChange={()=>{setAccordionCollapsed(!accordionCollapsed)}}
-        />
+
         <OnOff on={switchOn} onChange={setSwitchOn} />
         <UncontrolledAccordion title={'hello'} />
-        <UncontrolledRating />
         <OnOffUncontrolled onChange={setSwitchOn} /> {switchOn.toString()}
     </div>
   );
